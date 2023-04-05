@@ -1,0 +1,29 @@
+import time
+import pyautogui
+print(pyautogui.size())
+
+#pyautogui.moveTo(100, 150, duration = 0.001) #Pozycja x, pozycja y i następuję kliknięcie
+
+#pyautogui.scroll(-500)
+#pyautogui.moveRel(50, 50, duration = 0.001) # Pozycja referencyjna względem aktualnej pozycji
+
+#pyautogui.moveRel(50, 50, duration=1)
+"""
+while True:
+    # Pobierz aktualną pozycję kursora
+    position = pyautogui.position()
+
+    # Wyświetl pozycję kursora
+    print(position)
+    # Zatrzymaj pętlę na krótki czas (np. 0,1 sekundy)
+    #pyautogui.PAUSE = 0.1
+    time.sleep(1)
+"""
+#currentMouseX, currentMouseY = pyautogui.position()
+#print(currentMouseX, currentMouseY)
+
+#pyautogui.moveTo(663, 539, duration = 0.001)
+pyautogui.click(663, 539) #Pozycja x, pozycja y i następuję kliknięcie
+pyautogui.typewrite("hello Geeks !")
+
+hello Geeks !
