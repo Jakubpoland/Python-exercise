@@ -31,12 +31,13 @@ print(ZamianaNaWielkie(lancuch))
 
 """
 def usunParzyste(lista):
-    nowaLista=[]
+    nowaLista = []
     for i in lista:
-        if i%2 != 0:
+        if i % 2 != 0:
             nowaLista.append(i)
     return nowaLista
 
-ll = [11,22,412,531,532,66,85]
+ll = [11, 22, 412, 531, 532, 66, 85]
 print(usunParzyste(ll))
+
 """
