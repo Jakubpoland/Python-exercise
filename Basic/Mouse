@@ -1,3 +1,5 @@
+import keyboard
+
 import time
 import pyautogui
 print(pyautogui.size())
@@ -19,11 +21,20 @@ while True:
     #pyautogui.PAUSE = 0.1
     time.sleep(1)
 """
-#currentMouseX, currentMouseY = pyautogui.position()
-#print(currentMouseX, currentMouseY)
 
+"""
+currentMouseX, currentMouseY = pyautogui.position()
+print(currentMouseX, currentMouseY)
+"""
 #pyautogui.moveTo(663, 539, duration = 0.001)
-pyautogui.click(663, 539) #Pozycja x, pozycja y i następuję kliknięcie
-pyautogui.typewrite("hello Geeks !")
+#pyautogui.click(663, 539) #Pozycja x, pozycja y i następuję kliknięcie
+#pyautogui.typewrite("hello Geeks !")
 
-hello Geeks !
+#pyautogui.hotkey("ctrlleft", "a") #Wciśniecie kombinacji CTRL+a
+
+"""
+while keyboard.is_pressed('q') == False:
+    print("TRUE")
+"""
+
+pyautogui.hotkey("win", "r")
