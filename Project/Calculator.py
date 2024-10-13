@@ -20,8 +20,8 @@ from tkinter import * #Import biblioteki
 root = Tk()
 root.title("Kalkulator") #Nazwanie okienka
 
-e = Entry(root, width=45, borderwidth=5)  #Ustalenie wyglądu okienka wpisu
-e = Entry(root, width=45, borderwidth=5)
+e = Entry(root, width=45, borderwidth=5, relief='solid')  #Ustalenie wyglądu okienka wpisu
+b = Entry(root, width=45, borderwidth=5)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10) #Ustalenie wyglądy pola klawiszy
 
 def button_click(number): #Funkcja odpowiadająca za wpisywanie liczb
@@ -32,8 +32,18 @@ def button_click(number): #Funkcja odpowiadająca za wpisywanie liczb
     
 def button_cl(): #Funkcja odpowiadająca za czyszczenie
     e.delete(0, END)
+    
+def button_add():
+    first_number = e.get()
+    global f_num
+    f_num = int(first_number)
+    e.delete(0, END)
+    
 
-def button():
+def button_equal(): #Funkcja odpowiadająca za wynik 
+    second_number = e.get()
+    e.delete(0, END)
+    e.insert(0, f_num + int(second_number))
 
 button_1 = Button(root, text="1", padx=40, pady=20, command=lambda: button_click(1))
 button_2 = Button(root, text="2", padx=40, pady=20, command=lambda: button_click(2))
@@ -47,12 +57,12 @@ button_9 = Button(root, text="9", padx=40, pady=20, command=lambda: button_click
 button_0 = Button(root, text="0", padx=40, pady=20, command=lambda: button_click(0))
 #definicja przycisków liczb
 
-button_addition  = Button(root, text="+", padx=40, pady=20)
+button_addition  = Button(root, text="+", padx=40, pady=20, command=button_add)
 button_subtraction = Button(root, text="-", padx=40, pady=20) 
 button_multiplication = Button(root, text="*", padx=40, pady=20)
 button_division = Button(root, text="/", padx=40, pady=20)
-button_clear = Button(root, text="<-", padx=190, pady=20, command=button_cl)
-button_equation = Button(root, text="=", padx=40, pady=20)
+button_clear = Button(root, text="Clr", padx=40, pady=20, command=button_cl)
+button_equation = Button(root, text="=", padx=40, pady=20, command=button_equal)
 button_dot = Button(root, text=".", padx=40, pady=20)
 #definicja przycisków akcji
 
@@ -78,15 +88,18 @@ button_3.grid(row=3, column=2)
 button_subtraction.grid(row=3, column=3)
 #3 rząd przycisków
 
-button_equation.grid(row=4, column=0)
+
+button_clear.grid(row=4, column=0)
 button_0.grid(row=4, column=1)
 button_dot.grid(row=4, column=2)
 button_addition.grid(row=4, column=3)
+
 #4 rząd przycisków
 
 
 
-button_clear.grid(row=5, column=0, columnspan=4)
+button_equation.grid(row=5, column=0, columnspan=4)
+
 
 # 
 # Rozmieszczenie ich na planszy  
