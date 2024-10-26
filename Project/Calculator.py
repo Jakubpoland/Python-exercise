@@ -32,7 +32,6 @@ history_display = Text(root, width=30, height=20, font=('Arial', 12), state=NORM
 history_display.grid(row=0, column=4, rowspan=6, padx=10, pady=10)
 
 def button_click(number): #Funkcja odpowiadająca za wpisywanie liczb
-    #e.delete(0, END)
     cur = e.get()
     e.delete(0, END)
     e.insert(0, str(cur) + str(number))
@@ -51,6 +50,7 @@ def button_equal(): #Funkcja odpowiadająca za wynik
     second_number = e.get()
     e.delete(0, END)
     e.insert(0, f_num + int(second_number))
+
 
 button_1 = Button(root, text="1", padx=40, pady=20, command=lambda: button_click(1))
 button_2 = Button(root, text="2", padx=40, pady=20, command=lambda: button_click(2))
